@@ -46,6 +46,18 @@ namespace Employee.API.Employee
             return Ok(result);
         }
 
+        /// <summary>
+        /// Update employee
+        /// </summary>
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> Put([FromBody] Add.Request request, CancellationToken cancellationToken)
+        {
+            //var query = AddEmployeeCommand.CreateCommand(request.FirstName, request.LastName, request.Email);
+            var result = await _mediator.Send(request.ToMediator(), cancellationToken);
+            return Ok("Update employee work is in progress!!!!");
+        }
+
         private readonly IMediator _mediator;
     }
 }
