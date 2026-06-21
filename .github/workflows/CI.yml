@@ -1,0 +1,25 @@
+name: .NET Core CI
+
+# 🚀 Runs automatically whenever code hits the main branch
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x' # Matches your TargetFramework
+
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Compile and Build Code
+      run: dotnet build --configuration Release --no-restore
