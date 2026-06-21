@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Application/">
+    <Project Path="Employee.Infrastructure.Application/Employee.Infrastructure.Application.csproj" Id="32db9694-de91-49be-90b5-9f00e47902d4" />
+  </Folder>
+  <Folder Name="/Hosting/">
+    <Project Path="D:/NAVIN/Projects_2026/Employee/Employee/Employee.API/Employee.API.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="Employee.Infrastructure.Persistence.Repositories/Employee.Infrastructure.Persistence.Repositories.csproj" Id="2dd8a093-b081-4f8e-a8f9-84b7bce1f060" />
+    <Project Path="Employee.Infrastructure.Persistence/Employee.Infrastructure.Persistence.csproj" Id="79f915f9-5720-4367-95a6-bbc4399b143b" />
+  </Folder>
+</Solution>
