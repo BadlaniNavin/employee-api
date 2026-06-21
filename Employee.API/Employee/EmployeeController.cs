@@ -50,7 +50,7 @@ namespace Employee.API.Employee
         /// Update employee
         /// </summary>
         [AllowAnonymous]
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> Put([FromBody] Add.Request request, CancellationToken cancellationToken)
         {
             //var query = AddEmployeeCommand.CreateCommand(request.FirstName, request.LastName, request.Email);
