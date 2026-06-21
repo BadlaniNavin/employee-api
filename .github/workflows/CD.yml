@@ -24,7 +24,7 @@ jobs:
       uses: azure/webapps-deploy@v3
       with:
         # 💡 Points directly to your live app service name
-        app-name: 'employee-api-gecva6cmembvb0dg' 
+        app-name: 'employee-api' 
         # 🔑 Authenticates using the secret we generated in Step 1
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ./publish
