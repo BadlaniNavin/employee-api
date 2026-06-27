@@ -40,8 +40,7 @@ namespace Employee.API.Employee
         [RequiredScope("Employee.Write")]
         [HttpPost]       
         public async Task<IActionResult> Post([FromBody] Add.Request request,CancellationToken cancellationToken)
-        {
-            //var query = AddEmployeeCommand.CreateCommand(request.FirstName, request.LastName, request.Email);
+        {            
             var result = await _mediator.Send(request.ToMediator(), cancellationToken);
             return Ok(result);
         }
@@ -49,11 +48,9 @@ namespace Employee.API.Employee
         /// <summary>
         /// Update employee
         /// </summary>
-        [AllowAnonymous]
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] Add.Request request, CancellationToken cancellationToken)
-        {
-            //var query = AddEmployeeCommand.CreateCommand(request.FirstName, request.LastName, request.Email);
+        public async Task<IActionResult> Put([FromBody] Update.Request request, CancellationToken cancellationToken)
+        {            
             var result = await _mediator.Send(request.ToMediator(), cancellationToken);
             return Ok("Update employee work is in progress!!!!");
         }

@@ -40,4 +40,23 @@ public class EmployeeRepository : IEmployeeRepository
     {
         throw new NotImplementedException();
     }
+
+    public async Task UpdateEmployeeAsync(UpdateEmployeeRequestModel model, CancellationToken cancellationToken)
+    {
+        var existingEmployee = await _context.Employees.FindAsync(
+            new object[] { model.Id },
+            cancellationToken
+        );
+
+        if (existingEmployee == null)
+        {
+            throw new KeyNotFoundException($"Employee with ID {model.Id} not found.");
+        }
+
+        existingEmployee.FirstName = model.FirstName;
+        existingEmployee.LastName = model.LastName;
+
+        _context.Employees.Update(existingEmployee);
+        _context.SaveChanges();
+    }
 }

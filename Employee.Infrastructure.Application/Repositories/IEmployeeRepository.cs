@@ -18,4 +18,9 @@ public interface IEmployeeRepository
     /// Add employee
     /// </summary>
     Task AddEmployeeAsync(AddEmployeeRequestModel model, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Update employee
+    /// </summary>
+    Task UpdateEmployeeAsync(UpdateEmployeeRequestModel model, CancellationToken cancellationToken);
 }
